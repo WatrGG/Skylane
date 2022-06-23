@@ -39,3 +39,24 @@ void manager::createPass(int len) {
     std::cout << newPass;
 }
 
+void manager::viewPass(std::string newPass) {
+   std::string decryptPass = decrypt(newPass);
+   std::string iFile_tmp;
+   std::ifstream iFile;
+
+   iFile.open("passInput.txt");
+   iFile >> iFile_tmp;
+   iFile.close();
+
+ for (int i = 0; i < decryptPass.length(); i++) {
+        if (i == 0)
+            iFile_tmp += (char)CHAR_CTRL;
+        else
+            iFile_tmp += (char)CHAR_DATA;
+        
+        iFile_tmp += decryptPass[i];
+    }
+
+  std::cout << decryptPass;
+
+}

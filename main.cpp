@@ -52,6 +52,13 @@ int main() {
             std::cout << "This is your Generated Password:";
             manager::createPass(16);
         }
+
+        else if (mode == "view") {
+            std::string newPass;
+            std::cout << "welcome to the Password Viewer sub-menu" << std::endl;
+            std::cout << "These are your currently stored Passwords:";
+            manager::viewPass(newPass);
+        }
 //outputs Uknown mode if mode is not within expected range
         else {
             std::cout << "Unknown mode" << std::endl;

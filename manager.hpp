@@ -11,9 +11,11 @@ namespace manager {
 
     void storePassword(std::string newPass);
     void createPass(int len);
+    void viewPass(std::string newPass);
 
     std::string encrypt(std::string newPass);
     std::string decrypt(std::string oldPass);
 }
+
 
 #endif
